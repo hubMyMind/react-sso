@@ -68,3 +68,29 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+import React from 'react';  //This imports the core React library, which is necessary to create React components and hooks.
+import ReactDOM from 'react-dom/client'; //This imports the ReactDOM package, specifically the createRoot function from the react-dom/client module. ReactDOM is used for rendering React components to the DOM.
+import './index.css';//This imports the CSS file index.css for applying global styles to the application.
+import App from './App'; //This imports the App component from the App.js file. This component is the root component of the application.
+import reportWebVitals from './reportWebVitals'; //This imports a function for measuring performance in the app.
+import { BrowserRouter } from 'react-router-dom';
+
+const root = ReactDOM.createRoot(document.getElementById('root')); //This line creates a root DOM node where the React application will be mounted. 
+                                                                   //document.getElementById('root') selects the DOM element with the ID root, 
+                                                                   //and ReactDOM.createRoot creates a root instance in this element.
+root.render(   //This method renders the React component tree into the root DOM node created in the previous step.
+//This is a wrapper component provided by React to enable additional checks and warnings for its descendants. It helps in identifying potential problems in an application.
+//- This renders the App component inside the React.StrictMode component.   
+  <React.StrictMode>
+    <BrowserRouter>
+      <App/> 
+    </BrowserRouter>
+  </React.StrictMode>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals(); //This function call is used to measure and report the performance of the application. 
